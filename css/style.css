@@ -1,0 +1,167 @@
+/* Start My Frame Work */
+* {
+
+    list-style: none;
+    text-transform: capitalize;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+input {
+    outline: none
+}
+
+a {
+    text-decoration: none
+}
+
+:root {
+    --trans: .4s
+}
+
+.card > p{
+    line-height: 1.7
+}
+/* End My Frame Work */
+
+.hero {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    background: #f6fbff;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center
+}
+
+.hero > h1 {
+    font-size: 30px;
+    position: relative;
+    color: #685a5a
+}
+
+.hero > h1::after {
+    position: absolute;
+    content: "";
+    width: 150px;
+    height: 2px;
+    background: linear-gradient(to right, #f44336, #9f4db5);
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%)
+}
+
+.review-box {
+    width: 90%;
+    max-width: 700px;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: -10px 10px 40px rgba(0, 0, 0, 0.25);
+    position: relative;
+    overflow: hidden
+}
+
+.card {
+    height: 300px;
+    padding: 40px;
+    color: #777;
+    line-height: 22px;
+    background: #fff;
+    position: relative;
+    z-index: 1
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    width: 110px;
+    height: 110px;
+    border-bottom-right-radius: 100%;
+    background: #f44336;
+    top: 0;
+    left: 0;
+    z-index: -1
+}
+
+#slider {
+    width: 100%;
+    padding-right: 60px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: var(--trans)
+}
+
+.card .porfile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px
+}
+
+.card .porfile img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-right: 20px;
+    object-fit: cover
+}
+
+.card .porfile h3 {
+    font-size: 25px;
+    color: #f44336;
+    margin-bottom: 10px
+}
+
+.hero .sidebar {
+    width: 40px;
+    height: 100%;
+    padding: 15px 0;
+    background: #f44336;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1
+}
+
+.hero .sidebar img {
+    width: 25px;
+    padding: 5px;
+    background: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    top: 2px;
+    left: 7px
+}
+
+.hero .sidebar img:last-of-type {
+    top: 273px
+}
+
+::selection {
+    background: #f44336;
+    color: #fff
+}
+
+@media(max-width:450px){
+    
+    .card .porfile h3{
+        font-size: 20px;
+        margin-bottom: 3px
+    }
+    
+    .card > p{
+        font-size: 10px;
+        padding: 20px 0
+    }
+    
+    .card {
+        padding: 40px 0
+    }
+    
+    .card .porfile > div:first-of-type{
+        margin: auto
+    }
+}

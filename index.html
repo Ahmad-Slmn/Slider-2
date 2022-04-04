@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <meta charset="UTF-8" />
+    <meta name="discription" content="js" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slider</title>
+    <!-- Font Normalize -->
+    <link rel="stylesheet" href="css/normalize.css" />
+    <!-- My Main Style-css-->
+    <link rel='stylesheet' href="css/style.css" />
+</head>
+
+<body>
+    <div class="hero">
+        <h1>customer reviews</h1>
+        <div class="review-box">
+            <div id="slider">
+                <div class="card">
+                    <div class="porfile">
+                        <img src="images/pic4.jpg">
+                        <div>
+                            <h3>riley olie</h3>
+                            <p>web designer</p>
+                        </div>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat explicabo libero optio possimus molestiae eligendi in cum quis qui amet rem pariatur sapiente repellendus quidem praesentium, aliquid iure deleniti, dignissimos suscipit perspiciatis nostrum nihil nam.</p>
+                </div>
+
+                <div class="card">
+                    <div class="porfile">
+                        <img src="images/pic3.jpg">
+                        <div>
+                            <h3>ariya jion</h3>
+                            <p>web designer</p>
+                        </div>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat voluptatibus officiis, minus nostrum suscipit nulla, perferendis. Deserunt quia velit ullam corporis at consectetur quibusdam, ex repellendus doloremque maxime, cumque, doloribus expedita laudantium sunt possimus et?</p>
+                </div>
+
+
+                <div class="card">
+                    <div class="porfile">
+                        <img src="images/pic2.jpg">
+                        <div>
+                            <h3>steve lorel</h3>
+                            <p>web designer</p>
+                        </div>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique eius accusamus eum, deleniti nostrum reiciendis quod enim, assumenda rem commodi itaque repellat facere sapiente? Libero amet nam ratione porro, voluptatem voluptates nulla obcaecati dolorem molestiae.</p>
+                </div>
+
+                <div class="card">
+                    <div class="porfile">
+                        <img src="images/pic1.jpg">
+                        <div>
+                            <h3>merlin nguyen</h3>
+                            <p>web designer</p>
+                        </div>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus eveniet rerum, nemo explicabo unde est labore. Dolores nisi amet, rem tempora quisquam iste architecto eligendi necessitatibus deserunt, aliquam ex illo nostrum explicabo fuga eveniet nulla!</p>
+                </div>
+            </div>
+            <div class="sidebar">
+                <img src="images/up-arrow.png" id="uparrow">
+                <img src="images/down-arrow.png" id="downarrow">
+            </div>
+        </div>
+    </div>
+    <script>
+        let slider = document.getElementById("slider");
+        let up_arrow = document.getElementById("uparrow");
+        let down_arrow = document.getElementById("downarrow");
+
+        let x = 0;
+
+
+        up_arrow.onclick = function() {
+
+            if (x > -900) {
+
+                x = x - 300;
+
+                slider.style.top = x + "px"
+            }
+
+            check_down_arrow()
+            check_up_arrow()
+        }
+
+        function check_up_arrow() {
+
+            if (x == -900) {
+
+                document.querySelector(".hero .sidebar img:first-of-type").style.display = "none"
+            } else {
+                document.querySelector(".hero .sidebar img:first-of-type").style.display = "block"
+            }
+        }
+        check_up_arrow()
+
+        down_arrow.onclick = function() {
+
+            if (x < 0) {
+
+                x = x + 300;
+
+                slider.style.top = x + "px";
+
+            }
+
+            check_down_arrow()
+            check_up_arrow()
+        }
+
+        function check_down_arrow() {
+
+            if (x == 0) {
+
+                document.querySelector(".hero .sidebar img:last-of-type").style.display = "none"
+            } else {
+                document.querySelector(".hero .sidebar img:last-of-type").style.display = "block"
+            }
+        }
+        check_down_arrow()
+    </script>
+</body></html>
